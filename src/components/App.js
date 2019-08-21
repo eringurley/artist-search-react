@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
+import SearchArtists from './containers/SearchArtists';
 
-export default function App() {
-  return <h1>Hello World</h1>;
+export default class App extends Component {
+  render() {
+    return (
+        <>
+      <SearchArtists />
+        </>
+    );
+  }
 }
-  
