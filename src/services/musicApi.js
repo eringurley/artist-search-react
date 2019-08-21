@@ -1,8 +1,8 @@
-export const getArtists = (artist = 'nirvana', count = 25) => {
-  return fetch(`http://musicbrainz.org/ws/2/artist?query=${artist}&fmt=json&limit=${count}`)
+export const getArtists = (artists) => {
+  return fetch(`http://musicbrainz.org/ws/2/artist?query=${artists}&fmt=json&limit=25`)
     .then(res => ([res.ok, res.json()]))
     .then(([ok, json]) => {
-      if(!ok) throw 'Unable to fetch quotes';
+      if(!ok) throw 'Unable to get artist';
       return json;
     });
 };
