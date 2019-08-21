@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import SearchArtists from './containers/SearchArtists';
-
+import ArtistList from './containers/ArtistList';
 export default class App extends Component {
   render() {
     return (
         <>
-      <SearchArtists />
+      <ArtistList />
         </>
     );
   }
