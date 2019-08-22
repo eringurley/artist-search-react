@@ -1,14 +1,23 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Route
+  Route, 
+  Switch
 } from 'react-router-dom';
-import Search from './containers/Search';
+import SearchView from './containers/SearchView';
+import ReleaseView from './containers/ReleaseView';
+import DisplaySongs from './containers/DisplaySongs';
+
+
 
 function App() {
   return (
     <Router>
-      <Route path="/" component={Search} />
+      <Switch>
+        <Route path="/release/:artist/:release/:id" component={DisplaySongs} />
+        <Route path="/artist/:id" component={ReleaseView} />
+        <Route path="/" component={SearchView} />
+      </Switch>
     </Router>
   );
 }
