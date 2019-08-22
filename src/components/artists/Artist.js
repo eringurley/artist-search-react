@@ -1,18 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
-export default function Artist({ artist }) {
+function Artist({ artist }) {
   return (
-    <section>
-      <p>{artist.name}</p>
-      <p>{artist.id}</p>
-    </section>
+    <Link to={`/artist/${artist.id}`}>
+      <section>
+        <p>{artist.name}</p>
+        <p>{artist.disambiguation}</p>
+      </section>
+    </Link>
   );
 }
 
 Artist.propTypes = {
   artist: PropTypes.shape({
     name: PropTypes.string.isRequired,
+    disambiguation: PropTypes.string,
     id: PropTypes.string.isRequired
   })
 };
+
+export default Artist;
