@@ -21,21 +21,11 @@ export const getSongs = (id) => {
       return console.log('Successfully retieved songs!'), res.json();
     });
 };
-// export const getCoverArt = (coverArt) => {
-//   return fetch(`http://coverartarchive.org/release/<RELEASE_ID>/front`)
-//     .then(res => ([res.ok, res.json()]))
-//     .then(([ok, json]) => {
-//       if(!ok) throw 'Unable to fetch quotes';
 
-//       return json;
-//     });
-// };
-// export const getLyrics = lyrics => {
-//   return fetch('https://api.lyrics.ovh/v1/<ARTIST>/<TITLE>')
-//     .then(res => ([res.ok, res.json()]))
-//     .then(([ok, json]) => {
-//       if(!ok) throw 'Unable to fetch quotes';
-
-//       return json;
-//     });
-// };
+export const getLyrics = (artistName, songTitle) => {
+  return fetch(`https://api.lyrics.ovh/v1/${artistName}/${songTitle}`)
+    .then(res => {
+      if(!res.ok) throw 'Could not get the lyrics.';
+      return console.log('Successfully retieved lyrics!'), res.json();
+    });
+};
