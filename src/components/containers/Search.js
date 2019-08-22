@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { getArtists } from '../../services/musicApi';
-import Artists from '../Artists';
+import Artists from '../artists/Artists';
 import Input from  '../Input';
 
-export default class SearchArtists extends Component {
+export default class Search extends Component {
   state = {
     artists: [],
     artist: '',
