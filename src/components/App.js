@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import ArtistList from './containers/ArtistList';
+import Search from './containers/Search';
+
 export default class App extends Component {
   render() {
     return (
-        <>
-      <ArtistList />
-        </>
+      <>
+      <Search />
+      </>
     );
   }
 }
