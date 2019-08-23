@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 function Artist({ artist }) {
   return (
-    <Link to={`/artist/${artist.id}`}>
+    <Link to={`/artist/${artist.name}/${artist.id}`}>
       <section>
         <p>{artist.name}</p>
-        <p>{artist.disambiguation}</p>
+        <p>{artist.disambiguation} || `No description available for ${artist.id}`</p>
       </section>
     </Link>
   );
