@@ -2,21 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-function Release({ release, artist }) {
+function Release({ id, title, coverUrl }) {
   return (
-    <Link to={`/release/${artist}/${release.title}/${release.id}`}>
-      <p>{release.title}</p>
+    <Link to={`/release/${id}/${title}/$`}>
+      <img src={coverUrl} />
+      <p>{title}</p>
+      <p>{id}</p>
     </Link>
   );
 }
-
-
+  
+  
 Release.propTypes = {
-  release: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    id: PropTypes.string
-  }),
-  artist:PropTypes.string
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  coverUrl: PropTypes.string.isRequired
 };
-
+  
 export default Release;
