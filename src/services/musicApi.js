@@ -20,16 +20,13 @@ export const getArtists = (artists, page = 1) => {
 };
 
 
-export const getSongs = (id, page = 1) => {
-  return fetch(`http://musicbrainz.org/ws/2/recording?release=${id}&fmt=json`, page) 
-    .then(res => {
-      if(!res.ok) throw 'Could not get the songs.';
-      return console.log('Successfully retrieved songs!'), res.json();
-    });
+export const getSongs = (id) => {
+
+  return request(`http://musicbrainz.org/ws/2/recording?release=${id}&fmt=json`, 1)
 };
 
 export const getLyrics = (artist, songTitle) => {
-  return fetch(`https://api.lyrics.ovh/v1/${artist}/${songTitle}`)
+  return request(`https://api.lyrics.ovh/v1/${artist}/${songTitle}`)
     .then(res => {
       if(!res.ok) throw 'Could not get the lyrics.';
       console.log('api fires');
