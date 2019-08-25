@@ -37,10 +37,11 @@ class DisplayReleases extends Component {
     return (
       <>
         <h1>Releases for {this.props.match.params.artistName}</h1>
-        <Releases releases={releases} />
+        
+        <Releases releases={releases} artistName={this.props.match.params.artistName}/>
       </>
       // <>
-      //   <Releases releases ={this.state.releases} artist={this.props.match.params.artist} />
+      //   <Releases releases ={this.state.releases} artistName={this.props.match.params.artist} />
       // </>
     );
   }
